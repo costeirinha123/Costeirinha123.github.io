@@ -14,7 +14,21 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
+            padding-top: 60px;
+            padding-bottom: 40px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px 0;
+            text-align: center;
+            font-size: 1rem;
+            letter-spacing: 1px;
         }
 
         h1 {
@@ -25,12 +39,43 @@
         p {
             font-size: 1.5rem;
             margin-top: 0;
-            opacity: 0.8;
+            opacity: 0.85;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 0.9rem;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 8px 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
-    <h1>Ricardo</h1>
-    <p>Sousa</p>
+    <header>
+        <span id="data-atual"></span>
+    </header>
+
+    <main>
+        <h1>Ricardo</h1>
+        <p>Sousa</p>
+    </main>
+
+    <footer>
+        Feito com ❤️ por Ricardo Sousa
+    </footer>
+
+    <script>
+        const hoje = new Date();
+        const opcoes = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('data-atual').textContent = hoje.toLocaleDateString('pt-PT', opcoes);
+    </script>
 </body>
 </html>
