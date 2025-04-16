@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricardo Sousa</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #1f1c2c, #928dab);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding-top: 60px;
+            padding-bottom: 40px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px 0;
+            text-align: center;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-top: 0;
+            opacity: 0.85;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 0.9rem;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 8px 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <span id="data-atual"></span>
+    </header>
+
+    <main>
+        <h1>Ricardo Sousa, Nº 18 Curso de Python Módulo 10789(Metodologias de Des. de Software)</h1>
+    </main>
+
+    <footer>
+        Feito por Ricardo Sousa
+    </footer>
+
+    <script>
+        const hoje = new Date();
+        const opcoes = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('data-atual').textContent = hoje.toLocaleDateString('pt-PT', opcoes);
+    </script>
+</body>
+</html>
